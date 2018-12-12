@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+<div class="container">
+    <p><%=  %></p>
+
+    <div class="col s12">
+        <a href="/event/add" class="btn btn-success btn-lg">Add New Event</a>
+    </div>
+    <br>
+    <div class="=">
+        <div class="col- s12">
+            <% if( items.length > 0 ) { %>
+            <table class="table">
+                <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+                    <th>Profile</th>
+                    <th>Custom</th>
+                </thead>
+                <tbody>
+                    <% items.forEach(function(item, index){ %>
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td><%= item.name %></td>
+                        <td><%= item.username %></td>
+                        <td><% item.userprofile %></td>
+                        <td>
+                            <a class="btn btn-success" href="event/edit/<%= item.id %>">Edit</a>
+                            <a class="btn btn-danger" href="event/delete/<%= item.id %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <% } else{ %>
+            <p>There are no records available</p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

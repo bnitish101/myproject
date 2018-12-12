@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+<div class="container">
+    <br>
+    <div class="=">
+        <div class="col- s12">
+            <form action="http://localhost:4000/event/edit/<%= result[0].id %>" method="post">
+                <div class="form-group">
+                    <label for="name" class="">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<%= result[0].name %>"/>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="">User Name</label>
+                    <input type="text" class="form-control" id="username" name="username" value="<%= result[0].username %>" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Submit" />
+                    <input type="reset" class="btn btn-danger" value="Cancel" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
